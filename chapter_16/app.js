@@ -33,6 +33,7 @@ const db = getFirestore(app);
 
 const list = document.querySelector("ul");
 const form = document.querySelector("form");
+const button = document.querySelector("button");
 
 const addRecipe = (recipe, id) => {
   let time = recipe.created_at.toDate();
@@ -65,7 +66,8 @@ const deleteRecipe = (id) => {
   });
 };
 
-onSnapshot(collection(db, "recipes"), (snapshot) => {
+// real-time
+const unsubscribe = onSnapshot(collection(db, "recipes"), (snapshot) => {
   snapshot.docChanges().forEach((change) => {
     if (change.type === "added") {
       addRecipe(change.doc.data(), change.doc.id);
@@ -100,4 +102,9 @@ list.addEventListener("click", (e) => {
     deleteDoc(doc(db, "recipes", id));
     console.log("recipe deleted");
   }
+});
+
+button.addEventListener("click", () => {
+  unsubscribe();
+  console.log("unsubscribed from collection changes");
 });
