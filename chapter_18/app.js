@@ -65,3 +65,9 @@ ninja[symbolOne] = "ryu";
 ninja[symbolTwo] = "shaun";
 
 console.log(ninja);
+
+const test1 = () => {
+  ninja;
+};
+const test2 = () => ninja;
+console.log(test1(), test2());
