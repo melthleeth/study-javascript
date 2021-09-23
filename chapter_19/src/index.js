@@ -1,12 +1,12 @@
-const greet = (name) => {
-  console.log(`hello ${name}`);
-};
+import { styleBody, addTitle, contact } from "./dom";
+import users, { getPremUsers } from "./data";
 
-greet("mario");
-greet("luigi");
+console.log("index file");
+addTitle("test");
+styleBody();
+console.log(contact);
 
-class User {
-  constructor() {
-    this.score = 0;
-  }
-}
+const premUsers = getPremUsers(users);
+console.log(users, premUsers);
+
+console.log("test2");

@@ -1,16 +1,1 @@
-"use strict";
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var greet = function greet(name) {
-  console.log("hello ".concat(name));
-};
-
-greet("mario");
-greet("luigi");
-
-var User = function User() {
-  _classCallCheck(this, User);
-
-  this.score = 0;
-};
+(()=>{"use strict";console.log("dom file");var e,o=document.querySelector("body"),n=[{name:"mario",premium:!0},{name:"luigi",premium:!1},{name:"yoshi",premium:!0},{name:"toad",premium:!0},{name:"peach",premium:!1}];console.log("index file"),(e=document.createElement("h1")).textContent="test",o.appendChild(e),o.style.background="peachpuff",console.log("mario@thenetninja@co.uk");var t=function(e){return e.filter((function(e){return e.premium}))}(n);console.log(n,t),console.log("test2")})();
